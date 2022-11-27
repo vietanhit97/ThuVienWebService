@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BookServiceService WSDL service -->
+
+  <service name="BookService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service"/>
+      <parameter name="wsdlServiceElement" value="BookServiceService"/>
+      <parameter name="schemaQualified" value="http://entity,http://service"/>
+      <parameter name="wsdlServicePort" value="BookService"/>
+      <parameter name="className" value="service.BookService"/>
+      <parameter name="wsdlPortType" value="BookService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://entity" name="getBookById" qname="operNS:getBookById" returnQName="retNS:getBookByIdReturn" returnType="rtns:Book" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:isbn" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://entity" name="getListBooks" qname="operNS:getListBooks" returnQName="retNS:getListBooksReturn" returnType="rtns:Book" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertBook" qname="operNS:insertBook" returnQName="retNS:insertBookReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://entity" qname="pns:book" type="tns:Book"/>
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateBook" qname="operNS:updateBook" returnQName="retNS:updateBookReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://entity" qname="pns:book" type="tns:Book"/>
+      </operation>
+      <operation xmlns:operNS="http://service" xmlns:retNS="http://service" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteBook" qname="operNS:deleteBook" returnQName="retNS:deleteBookReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:isbn" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="deleteBook updateBook getListBooks insertBook getBookById"/>
+
+      <typeMapping xmlns:ns="http://entity" qname="ns:Book" type="java:entity.Book" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

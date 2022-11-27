@@ -1,0 +1,63 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BookService WSDL service -->
+
+  <service name="Book" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://entity"/>
+      <parameter name="wsdlServiceElement" value="BookService"/>
+      <parameter name="schemaQualified" value="http://entity"/>
+      <parameter name="wsdlServicePort" value="Book"/>
+      <parameter name="className" value="entity.BookSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Book"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="setBookName" qname="operNS:setBookName" xmlns:operNS="http://entity" soapAction="" >
+        <parameter qname="pns:bookName" xmlns:pns="http://entity" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getYearPubish" qname="operNS:getYearPubish" xmlns:operNS="http://entity" returnQName="retNS:getYearPubishReturn" xmlns:retNS="http://entity" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getPublisher" qname="operNS:getPublisher" xmlns:operNS="http://entity" returnQName="retNS:getPublisherReturn" xmlns:retNS="http://entity" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setPrice" qname="operNS:setPrice" xmlns:operNS="http://entity" soapAction="" >
+        <parameter qname="pns:price" xmlns:pns="http://entity" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPrice" qname="operNS:getPrice" xmlns:operNS="http://entity" returnQName="retNS:getPriceReturn" xmlns:retNS="http://entity" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setIsbn" qname="operNS:setIsbn" xmlns:operNS="http://entity" soapAction="" >
+        <parameter qname="pns:isbn" xmlns:pns="http://entity" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setYearPubish" qname="operNS:setYearPubish" xmlns:operNS="http://entity" soapAction="" >
+        <parameter qname="pns:yearPubish" xmlns:pns="http://entity" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getBookName" qname="operNS:getBookName" xmlns:operNS="http://entity" returnQName="retNS:getBookNameReturn" xmlns:retNS="http://entity" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setPublisher" qname="operNS:setPublisher" xmlns:operNS="http://entity" soapAction="" >
+        <parameter qname="pns:publisher" xmlns:pns="http://entity" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setPages" qname="operNS:setPages" xmlns:operNS="http://entity" soapAction="" >
+        <parameter qname="pns:pages" xmlns:pns="http://entity" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getIsbn" qname="operNS:getIsbn" xmlns:operNS="http://entity" returnQName="retNS:getIsbnReturn" xmlns:retNS="http://entity" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getPages" qname="operNS:getPages" xmlns:operNS="http://entity" returnQName="retNS:getPagesReturn" xmlns:retNS="http://entity" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getAuthor" qname="operNS:getAuthor" xmlns:operNS="http://entity" returnQName="retNS:getAuthorReturn" xmlns:retNS="http://entity" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setAuthor" qname="operNS:setAuthor" xmlns:operNS="http://entity" soapAction="" >
+        <parameter qname="pns:author" xmlns:pns="http://entity" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getSerialversionuid" qname="operNS:getSerialversionuid" xmlns:operNS="http://entity" returnQName="retNS:getSerialversionuidReturn" xmlns:retNS="http://entity" returnType="rtns:long" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="setPages getYearPubish getAuthor getSerialversionuid setPrice getIsbn getPrice setIsbn setAuthor getPublisher setYearPubish getBookName setBookName getPages setPublisher"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,115 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Users\Viet Anh\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\BigWebService\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="Book" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="setBookName" qname="ns1:setBookName" soapAction="" xmlns:ns1="http://entity" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:bookName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns2:operation>
+  <ns1:operation name="getYearPubish" qname="ns2:getYearPubish" returnQName="ns2:getYearPubishReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getPublisher" qname="ns3:getPublisher" returnQName="ns3:getPublisherReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setPrice" qname="ns4:setPrice" soapAction="" xmlns:ns4="http://entity">
+   <ns1:parameter qname="ns4:price" type="xsd:double" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getPrice" qname="ns5:getPrice" returnQName="ns5:getPriceReturn" returnType="xsd:double" soapAction="" xmlns:ns5="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setIsbn" qname="ns6:setIsbn" soapAction="" xmlns:ns6="http://entity">
+   <ns1:parameter qname="ns6:isbn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setYearPubish" qname="ns7:setYearPubish" soapAction="" xmlns:ns7="http://entity">
+   <ns1:parameter qname="ns7:yearPubish" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getBookName" qname="ns8:getBookName" returnQName="ns8:getBookNameReturn" returnType="xsd:string" soapAction="" xmlns:ns8="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setPublisher" qname="ns9:setPublisher" soapAction="" xmlns:ns9="http://entity">
+   <ns1:parameter qname="ns9:publisher" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setPages" qname="ns10:setPages" soapAction="" xmlns:ns10="http://entity">
+   <ns1:parameter qname="ns10:pages" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getIsbn" qname="ns11:getIsbn" returnQName="ns11:getIsbnReturn" returnType="xsd:string" soapAction="" xmlns:ns11="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getPages" qname="ns12:getPages" returnQName="ns12:getPagesReturn" returnType="xsd:int" soapAction="" xmlns:ns12="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getAuthor" qname="ns13:getAuthor" returnQName="ns13:getAuthorReturn" returnType="xsd:string" soapAction="" xmlns:ns13="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setAuthor" qname="ns14:setAuthor" soapAction="" xmlns:ns14="http://entity">
+   <ns1:parameter qname="ns14:author" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getSerialversionuid" qname="ns15:getSerialversionuid" returnQName="ns15:getSerialversionuidReturn" returnType="xsd:long" soapAction="" xmlns:ns15="http://entity" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="setPages getYearPubish getAuthor getSerialversionuid setPrice getIsbn getPrice setIsbn setAuthor getPublisher setYearPubish getBookName setBookName getPages setPublisher"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Book"/>
+  <ns1:parameter name="className" value="entity.Book"/>
+  <ns1:parameter name="wsdlServicePort" value="Book"/>
+  <ns1:parameter name="schemaQualified" value="http://entity"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://entity"/>
+  <ns1:parameter name="wsdlServiceElement" value="BookService"/>
+ </ns1:service>
+ <ns1:service name="BookService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getBookById" qname="ns16:getBookById" returnQName="ns16:getBookByIdReturn" returnType="ns17:Book" soapAction="" xmlns:ns16="http://service" xmlns:ns17="http://entity">
+   <ns1:parameter qname="ns16:isbn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getListBooks" qname="ns18:getListBooks" returnQName="ns18:getListBooksReturn" returnType="ns19:Book" soapAction="" xmlns:ns18="http://service" xmlns:ns19="http://entity"/>
+  <ns1:operation name="insertBook" qname="ns20:insertBook" returnQName="ns20:insertBookReturn" returnType="xsd:boolean" soapAction="" xmlns:ns20="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns20:book" type="ns21:Book" xmlns:ns21="http://entity"/>
+  </ns1:operation>
+  <ns1:operation name="updateBook" qname="ns22:updateBook" returnQName="ns22:updateBookReturn" returnType="xsd:boolean" soapAction="" xmlns:ns22="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns22:book" type="ns23:Book" xmlns:ns23="http://entity"/>
+  </ns1:operation>
+  <ns1:operation name="deleteBook" qname="ns24:deleteBook" returnQName="ns24:deleteBookReturn" returnType="xsd:boolean" soapAction="" xmlns:ns24="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns24:isbn" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="deleteBook updateBook getListBooks insertBook getBookById"/>
+  <ns1:parameter name="wsdlPortType" value="BookService"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://entity,http://service"/>
+  <ns1:parameter name="wsdlServicePort" value="BookService"/>
+  <ns1:parameter name="className" value="service.BookService"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://service"/>
+  <ns1:parameter name="wsdlServiceElement" value="BookServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns25:Book" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:entity.Book" xmlns:ns25="http://entity"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

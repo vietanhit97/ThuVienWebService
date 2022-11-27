@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://entity" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://entity" xmlns:intf="http://entity" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://entity" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="setBookName">
+    <complexType>
+     <sequence>
+      <element name="bookName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setBookNameResponse">
+    <complexType/>
+   </element>
+   <element name="getYearPubish">
+    <complexType/>
+   </element>
+   <element name="getYearPubishResponse">
+    <complexType>
+     <sequence>
+      <element name="getYearPubishReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPublisher">
+    <complexType/>
+   </element>
+   <element name="getPublisherResponse">
+    <complexType>
+     <sequence>
+      <element name="getPublisherReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPrice">
+    <complexType>
+     <sequence>
+      <element name="price" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPriceResponse">
+    <complexType/>
+   </element>
+   <element name="getPrice">
+    <complexType/>
+   </element>
+   <element name="getPriceResponse">
+    <complexType>
+     <sequence>
+      <element name="getPriceReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setIsbn">
+    <complexType>
+     <sequence>
+      <element name="isbn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setIsbnResponse">
+    <complexType/>
+   </element>
+   <element name="setYearPubish">
+    <complexType>
+     <sequence>
+      <element name="yearPubish" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setYearPubishResponse">
+    <complexType/>
+   </element>
+   <element name="getBookName">
+    <complexType/>
+   </element>
+   <element name="getBookNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getBookNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPublisher">
+    <complexType>
+     <sequence>
+      <element name="publisher" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPublisherResponse">
+    <complexType/>
+   </element>
+   <element name="setPages">
+    <complexType>
+     <sequence>
+      <element name="pages" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPagesResponse">
+    <complexType/>
+   </element>
+   <element name="getIsbn">
+    <complexType/>
+   </element>
+   <element name="getIsbnResponse">
+    <complexType>
+     <sequence>
+      <element name="getIsbnReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPages">
+    <complexType/>
+   </element>
+   <element name="getPagesResponse">
+    <complexType>
+     <sequence>
+      <element name="getPagesReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAuthor">
+    <complexType/>
+   </element>
+   <element name="getAuthorResponse">
+    <complexType>
+     <sequence>
+      <element name="getAuthorReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setAuthor">
+    <complexType>
+     <sequence>
+      <element name="author" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setAuthorResponse">
+    <complexType/>
+   </element>
+   <element name="getSerialversionuid">
+    <complexType/>
+   </element>
+   <element name="getSerialversionuidResponse">
+    <complexType>
+     <sequence>
+      <element name="getSerialversionuidReturn" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setPriceResponse">
+
+      <wsdl:part element="impl:setPriceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPagesResponse">
+
+      <wsdl:part element="impl:setPagesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPriceRequest">
+
+      <wsdl:part element="impl:getPrice" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPriceRequest">
+
+      <wsdl:part element="impl:setPrice" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPublisherResponse">
+
+      <wsdl:part element="impl:getPublisherResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPublisherResponse">
+
+      <wsdl:part element="impl:setPublisherResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIsbnRequest">
+
+      <wsdl:part element="impl:getIsbn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPublisherRequest">
+
+      <wsdl:part element="impl:setPublisher" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPagesResponse">
+
+      <wsdl:part element="impl:getPagesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSerialversionuidResponse">
+
+      <wsdl:part element="impl:getSerialversionuidResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPriceResponse">
+
+      <wsdl:part element="impl:getPriceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAuthorResponse">
+
+      <wsdl:part element="impl:setAuthorResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAuthorRequest">
+
+      <wsdl:part element="impl:getAuthor" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIsbnResponse">
+
+      <wsdl:part element="impl:getIsbnResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAuthorResponse">
+
+      <wsdl:part element="impl:getAuthorResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setBookNameRequest">
+
+      <wsdl:part element="impl:setBookName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setBookNameResponse">
+
+      <wsdl:part element="impl:setBookNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPagesRequest">
+
+      <wsdl:part element="impl:getPages" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPublisherRequest">
+
+      <wsdl:part element="impl:getPublisher" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setIsbnResponse">
+
+      <wsdl:part element="impl:setIsbnResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSerialversionuidRequest">
+
+      <wsdl:part element="impl:getSerialversionuid" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setYearPubishResponse">
+
+      <wsdl:part element="impl:setYearPubishResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBookNameResponse">
+
+      <wsdl:part element="impl:getBookNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setIsbnRequest">
+
+      <wsdl:part element="impl:setIsbn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getYearPubishRequest">
+
+      <wsdl:part element="impl:getYearPubish" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBookNameRequest">
+
+      <wsdl:part element="impl:getBookName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPagesRequest">
+
+      <wsdl:part element="impl:setPages" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setYearPubishRequest">
+
+      <wsdl:part element="impl:setYearPubish" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getYearPubishResponse">
+
+      <wsdl:part element="impl:getYearPubishResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAuthorRequest">
+
+      <wsdl:part element="impl:setAuthor" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Book">
+
+      <wsdl:operation name="setBookName">
+
+         <wsdl:input message="impl:setBookNameRequest" name="setBookNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setBookNameResponse" name="setBookNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getYearPubish">
+
+         <wsdl:input message="impl:getYearPubishRequest" name="getYearPubishRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getYearPubishResponse" name="getYearPubishResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPublisher">
+
+         <wsdl:input message="impl:getPublisherRequest" name="getPublisherRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPublisherResponse" name="getPublisherResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrice">
+
+         <wsdl:input message="impl:setPriceRequest" name="setPriceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPriceResponse" name="setPriceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrice">
+
+         <wsdl:input message="impl:getPriceRequest" name="getPriceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPriceResponse" name="getPriceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setIsbn">
+
+         <wsdl:input message="impl:setIsbnRequest" name="setIsbnRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setIsbnResponse" name="setIsbnResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setYearPubish">
+
+         <wsdl:input message="impl:setYearPubishRequest" name="setYearPubishRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setYearPubishResponse" name="setYearPubishResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBookName">
+
+         <wsdl:input message="impl:getBookNameRequest" name="getBookNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBookNameResponse" name="getBookNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPublisher">
+
+         <wsdl:input message="impl:setPublisherRequest" name="setPublisherRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPublisherResponse" name="setPublisherResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPages">
+
+         <wsdl:input message="impl:setPagesRequest" name="setPagesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPagesResponse" name="setPagesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIsbn">
+
+         <wsdl:input message="impl:getIsbnRequest" name="getIsbnRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getIsbnResponse" name="getIsbnResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPages">
+
+         <wsdl:input message="impl:getPagesRequest" name="getPagesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPagesResponse" name="getPagesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAuthor">
+
+         <wsdl:input message="impl:getAuthorRequest" name="getAuthorRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAuthorResponse" name="getAuthorResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAuthor">
+
+         <wsdl:input message="impl:setAuthorRequest" name="setAuthorRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setAuthorResponse" name="setAuthorResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSerialversionuid">
+
+         <wsdl:input message="impl:getSerialversionuidRequest" name="getSerialversionuidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSerialversionuidResponse" name="getSerialversionuidResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BookSoapBinding" type="impl:Book">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="setBookName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setBookNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setBookNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getYearPubish">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getYearPubishRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getYearPubishResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPublisher">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPublisherRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPublisherResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrice">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPriceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPriceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrice">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPriceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPriceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setIsbn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setIsbnRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setIsbnResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setYearPubish">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setYearPubishRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setYearPubishResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBookName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBookNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBookNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPublisher">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPublisherRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPublisherResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPages">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPagesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPagesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIsbn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getIsbnRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getIsbnResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPages">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPagesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPagesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAuthor">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAuthorRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAuthorResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAuthor">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setAuthorRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setAuthorResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSerialversionuid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSerialversionuidRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSerialversionuidResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BookService">
+
+      <wsdl:port binding="impl:BookSoapBinding" name="Book">
+
+         <wsdlsoap:address location="http://localhost:8080/BigWebService/services/Book"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

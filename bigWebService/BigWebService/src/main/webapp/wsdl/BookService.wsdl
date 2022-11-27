@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service" xmlns:intf="http://service" xmlns:tns1="http://entity" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://entity"/>
+   <element name="getBookById">
+    <complexType>
+     <sequence>
+      <element name="isbn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBookByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getBookByIdReturn" type="tns1:Book"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListBooks">
+    <complexType/>
+   </element>
+   <element name="getListBooksResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getListBooksReturn" type="tns1:Book"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertBook">
+    <complexType>
+     <sequence>
+      <element name="book" type="tns1:Book"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertBookResponse">
+    <complexType>
+     <sequence>
+      <element name="insertBookReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateBook">
+    <complexType>
+     <sequence>
+      <element name="book" type="tns1:Book"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateBookResponse">
+    <complexType>
+     <sequence>
+      <element name="updateBookReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteBook">
+    <complexType>
+     <sequence>
+      <element name="isbn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteBookResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteBookReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://entity" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Book">
+    <sequence>
+     <element name="author" nillable="true" type="xsd:string"/>
+     <element name="bookName" nillable="true" type="xsd:string"/>
+     <element name="isbn" nillable="true" type="xsd:string"/>
+     <element name="pages" nillable="true" type="xsd:int"/>
+     <element name="price" nillable="true" type="xsd:double"/>
+     <element name="publisher" nillable="true" type="xsd:string"/>
+     <element name="yearPubish" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getBookByIdRequest">
+
+      <wsdl:part element="impl:getBookById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteBookRequest">
+
+      <wsdl:part element="impl:deleteBook" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertBookResponse">
+
+      <wsdl:part element="impl:insertBookResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateBookResponse">
+
+      <wsdl:part element="impl:updateBookResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteBookResponse">
+
+      <wsdl:part element="impl:deleteBookResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBookByIdResponse">
+
+      <wsdl:part element="impl:getBookByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListBooksRequest">
+
+      <wsdl:part element="impl:getListBooks" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertBookRequest">
+
+      <wsdl:part element="impl:insertBook" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListBooksResponse">
+
+      <wsdl:part element="impl:getListBooksResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateBookRequest">
+
+      <wsdl:part element="impl:updateBook" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BookService">
+
+      <wsdl:operation name="getBookById">
+
+         <wsdl:input message="impl:getBookByIdRequest" name="getBookByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBookByIdResponse" name="getBookByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListBooks">
+
+         <wsdl:input message="impl:getListBooksRequest" name="getListBooksRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getListBooksResponse" name="getListBooksResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertBook">
+
+         <wsdl:input message="impl:insertBookRequest" name="insertBookRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertBookResponse" name="insertBookResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateBook">
+
+         <wsdl:input message="impl:updateBookRequest" name="updateBookRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateBookResponse" name="updateBookResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteBook">
+
+         <wsdl:input message="impl:deleteBookRequest" name="deleteBookRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteBookResponse" name="deleteBookResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BookServiceSoapBinding" type="impl:BookService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getBookById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBookByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBookByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListBooks">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getListBooksRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getListBooksResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertBook">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertBookRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertBookResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateBook">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateBookRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateBookResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteBook">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteBookRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteBookResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BookServiceService">
+
+      <wsdl:port binding="impl:BookServiceSoapBinding" name="BookService">
+
+         <wsdlsoap:address location="http://localhost:8080/BigWebService/services/BookService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
